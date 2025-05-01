@@ -1,0 +1,23 @@
+@use 'variables' as v;
+
+.color-block{
+    background-color: v.$color-accent;
+    width: 100vw;    
+}
+.color-block__item{
+    margin-right: 20px;
+    height: 50px;
+    width: 50px;
+}
+
+@media screen and (max-width: 1170px){
+    .color-block__item{ 
+        max-width: 30%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .color-block{
+        height: auto;
+    }
+}

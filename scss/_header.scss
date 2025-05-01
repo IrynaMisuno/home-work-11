@@ -1,0 +1,138 @@
+@use 'variables' as v;
+
+.header {
+    background-color: v.$bg-accent;
+    padding-top: 79px;
+    padding-bottom: 20px;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.header__nav-toggler,
+#nav-toggler{
+    display: none;
+}
+
+
+.header__list{
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+
+}
+
+.header__link{
+    text-decoration: none;
+    color: v.$color-black;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.header__link.header__link--active{
+    color: v.$color-accent;
+    font-weight: 500;
+}
+
+.header__link:hover,
+.header__link:focus{
+    opacity: .8;
+}
+
+.header__link:active{
+    opacity: .3;
+} 
+
+@media screen and (max-width: 1170px){
+
+    .header{
+        width: 100%;
+        display: flex;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 880px){
+   
+    .header__list{
+        position: absolute;
+        top: 65px;
+        left:0;
+        height: calc(100dvh - 65px);
+        background: v.$bg-accent;
+        translate: -200vw 0;
+        transition: translate .5s;
+        flex-direction: column;
+        overflow: auto;
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    input:checked ~ .header__list{
+        translate: 0;
+    }
+
+    .header{
+        padding-top: 20px;
+        align-items: center;
+    }
+
+    .header__nav-toggler{
+        display: block;
+        background: none;
+        border: none;
+        padding: 0;
+        position:relative;
+        width: 45px;
+        height: 45px;
+    }
+
+    .header__nav-toggler span,
+    .header__nav-toggler::before,
+    .header__nav-toggler::after{
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background: black;
+        transition: .5s;
+    }
+    .header__nav-toggler::before{
+        margin-top: -10px;
+         }
+
+    .header__nav-toggler::after{
+            margin-top: 10px;
+        }
+
+    input:checked + .header__nav-toggler::after,
+    input:checked + .header__nav-toggler::before{
+        margin-top: 0;    
+        rotate: 225deg;
+    
+    }
+
+    input:checked + .header__nav-toggler span{
+        opacity: 0;
+    }
+
+
+    input:checked + .header__nav-toggler::after{
+        rotate: -225deg;
+    }
+}
+@media screen and (max-width: 500px){
+
+    .header{
+        padding-top: 10px;
+    }
+}

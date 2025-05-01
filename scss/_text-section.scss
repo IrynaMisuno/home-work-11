@@ -1,0 +1,45 @@
+@use 'variables' as v;
+
+.text-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+}
+
+.text-section__title{
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0;
+    color: v.$text-primary;
+}
+
+.text-section__description {
+    max-width: 540px;
+    color: v.$text-secondary;
+} 
+
+
+
+@media screen and (max-width: 880px){
+    .text-section{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .text-section__title, 
+    .text-section:not(:last-child){
+        margin-bottom: 20px;
+    }
+
+}
+@media screen and (max-width: 500px){
+
+.text-section__title{
+    font-size: 30px;
+}
+
+}

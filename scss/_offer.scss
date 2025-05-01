@@ -1,0 +1,51 @@
+@use 'variables' as v;
+.offer{
+    background-color: v.$bg-accent;
+    padding-bottom: 141px;
+    padding-top: 257px;
+}
+
+.offer__title{
+    font-weight: 500;
+    font-size: 48px;
+    margin: 0 0 60px;
+}
+
+.offer__description{
+    max-width: 540px;
+    margin: 0 0 60px;
+    color: v.$text-secondary;
+}
+@media screen and (max-width: 1170px){
+    .offer{
+        padding-top: 175px;
+        padding-bottom: 75px;
+    }
+}
+@media screen and (max-width: 880px){
+    .offer{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .offer__title, 
+    .offer__description{
+        margin-bottom: 20px;
+    }
+
+}
+@media screen and (max-width: 500px){ 
+.offer__title{
+    font-size: 36px;
+}
+
+.offer{
+    padding-top: 50px;
+
+}
+
+.offer__description{
+   padding-bottom: 20px;
+}
+
+}

@@ -1,0 +1,29 @@
+
+
+@use 'header';
+@use 'container';
+@use 'offer';
+@use 'button';
+@use 'color-block';
+@use 'footer';
+@use 'item-section';
+@use 'text-section';
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+body{
+    font-family: "Roboto", sans-serif;
+    line-height: 1.64;}
+
+    .mb50 {
+        margin-bottom: 50px;
+    }
+    @media screen and (max-width: 880px){
+    iframe{
+        width: 80vw;
+    }
+}

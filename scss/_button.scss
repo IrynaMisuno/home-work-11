@@ -1,0 +1,37 @@
+@use 'variables' as v;
+.button{
+    background-color: v.$color-accent;
+    color: v.$text-accent;
+    border: v.$button-border;
+    padding: 18px 41px;
+    display: inline-flex;
+    line-height: 1.64;
+    text-decoration: none;
+    letter-spacing: .1em;
+    min-width: 225px;
+    justify-content: center;
+    position: relative;
+
+}
+
+.button:hover,
+.button:focus{
+    opacity: .8;
+}
+
+.button:active{
+    opacity: .3;
+}
+
+@media screen and (max-width: 500px){
+.button__container{
+    display: grid;
+    grid-template-columns: 2, auto;
+    gap: 20px;
+}
+
+.button{
+    padding: 10px 31px;
+    min-width: 120px;
+}
+}

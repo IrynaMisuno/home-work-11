@@ -1,0 +1,45 @@
+@use 'variables' as v;
+
+.item-section{
+    color: v.$text-accent;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item-section__group{
+    display: flex;
+    align-items: center;
+    width: 140px;
+   
+}
+
+.item-section h3:not(.h3-text){
+    font-weight: 500;
+}
+@media screen and (max-width: 1170px){ 
+    .item-section{
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: space-between;
+}
+}
+@media screen and (max-width: 880px){
+    .item-section{
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 500px){
+    .item-section{
+        height: auto;
+    }
+
+    .item-section{
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+    }
+}
